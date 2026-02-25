@@ -13,5 +13,4 @@ spring:
         - id: proyectoCompraEntradas
           uri: lb://proyectoCompraEntradas/
           predicates:
-            - Path=/purchases/**
-            
+            - Path=/purchases/**      
