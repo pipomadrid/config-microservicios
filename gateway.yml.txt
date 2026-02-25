@@ -2,14 +2,16 @@ server:
   port: 8083
 spring:
   cloud: 
-   gateway: 
-    routes:
-      - id: proyectoEventos
-        uri: lb://proyectoEventos/
-        predicates:
-          - Path=/events/**
-      - id: proyectoCompraEntradas
-        uri: lb://proyectoCompraEntradas/
-        predicates:
-          - Path=/purchases/**
+   gateway:
+    server:
+     webmvc:
+      routes:
+        - id: proyectoEventos
+          uri: lb://proyectoEventos/
+          predicates:
+            - Path=/events/**
+        - id: proyectoCompraEntradas
+          uri: lb://proyectoCompraEntradas/
+          predicates:
+            - Path=/purchases/**
             
